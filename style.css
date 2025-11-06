@@ -1,0 +1,437 @@
+/* 🎨 VARIÁVEIS GLOBAIS PARA FÁCIL MANUTENÇÃO */
+:root {      
+    --cor-texto: #E0E0E0;      
+    --cor-primaria: #00BFFF;   
+    --cor-secundaria: #202020; 
+    --espacamento: 80px;
+}
+
+#background-video {
+    position: fixed;
+    min-width: 100%; 
+    min-height: 100%;
+    width: auto;
+    height: auto; 
+    filter: brightness(0.4) blur(1px);
+    background-position: center;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--cor-fundo); 
+    color: var(--cor-texto);
+    line-height: 1.6;
+    position: relative; 
+    z-index: 1; 
+}
+
+/* Destaque para o nome no cabeçalho */
+h1 {
+    color: var(--cor-primaria);
+    font-size: 2.2em;
+    margin: 0;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+h2 {
+    font-size: 2.2em;
+    border-bottom: 3px solid var(--cor-primaria);
+    display: inline-block; 
+    padding-bottom: 5px;
+    margin-bottom: 40px;
+    position: relative;
+    padding-right: 15px;
+}
+
+h2::after { /* Losango no final da linha */
+    content: '';
+    position: absolute;
+    bottom: -3px; 
+    right: 0;
+    width: 10px;
+    height: 10px;
+    background-color: var(--cor-primaria);
+    transform: rotate(45deg); 
+}
+
+
+h3 {
+    color: #FFFFFF;
+    margin-bottom: 15px;
+}
+
+a {
+    color: var(--cor-primaria);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #FFFFFF;
+}
+
+/* HEADER - AGORA TRANSPARENTE, MAS COM POSICIONAMENTO PARA FUNCIONAR COM ::BEFORE */
+header {
+    padding: 15px 5%;
+    box-shadow: 0 10px 8px rgba(0, 0, 0, 0.4);
+    position: sticky; 
+    top: 0;
+    z-index: 1000;
+    background-color: transparent; 
+    position: sticky; 
+    z-index: 1000;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+/* PSEUDO-ELEMENTO PARA CRIAR O FUNDO SEMI-TRANSPARENTE */
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #0f0f0f85; 
+    z-index: -1; 
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative; 
+    z-index: 2; 
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 30px;
+}
+
+nav ul li a {
+    color: var(--cor-texto);
+    font-weight: 500;
+}
+
+nav ul li a:hover {
+    color: var(--cor-primaria);
+}
+
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+    z-index: 5;
+    background-color: var(--cor-fundo); 
+}
+
+.secao-padrao {
+    padding: var(--espacamento) 0;
+    scroll-margin-top: 100px; 
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background-color: var(--cor-secundaria);
+    margin: var(--espacamento) 0;
+}
+
+
+#sobre .sobre-conteudo {
+    display: flex;
+    align-items: flex-start; 
+    gap: 80px;
+}
+
+/* 1. ESTILO DA COLUNA ESQUERDA (Foto + Apresentação) */
+.perfil-info {
+    flex-basis: 35%; 
+    display: flex;
+    flex-direction: column; 
+    align-items: flex-start; 
+    text-align: left; 
+}
+
+.foto-perfil {
+    display: block; 
+    margin: 0 0 50px 80px;   
+    width: 220px; 
+    height: 220px;
+    border-radius: 50%; 
+    object-fit: cover; 
+    border: 4px solid var(--cor-primaria); 
+    box-shadow: 0 0 30px rgba(0, 191, 255, 0.4); 
+    flex-shrink: 0;
+}
+
+.apresentacao-rapida {
+    box-shadow: 0px 0px 30px 0px black;
+    border-radius: 20px;
+    font-size: 1.05em;
+    font-style: italic;
+    color: var(--cor-texto);
+    line-height: 1.4;
+    margin-bottom: 30px; 
+    text-align: left;
+    border-left: solid 2px #0099CC;
+    border-right: solid 2px #0099CC;
+    width: 100%;
+    padding: 8px;
+    background-color: #0f0f0f46;
+}
+
+.linguagens-badges {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 8px; 
+    margin-bottom: 20px; 
+    align-self: flex-start; 
+    justify-content: flex-start;
+}
+
+.linguagens-badges img {
+    height: 28px; 
+}
+
+.sobre-texto {
+    flex-basis: 65%; 
+    flex-grow: 1;
+}
+
+.sobre-texto h3 {
+    color: var(--cor-primaria); 
+    font-size: 1.3em;
+    margin-top: 0; 
+    margin-bottom: 15px;
+}
+
+.sobre-texto ul {
+    list-style: none; 
+    padding-left: 0;
+    margin-top: 10px;
+}
+
+.sobre-texto ul li {
+    background-color: #272727; 
+    padding: 10px 15px;
+    margin-bottom: 8px;
+    border-radius: 4px;
+    border-left: 3px solid var(--cor-primaria); 
+}
+
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.card-projeto {
+    background-color: var(--cor-secundaria);
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-left: 5px solid var(--cor-primaria); 
+}
+
+.card-projeto:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 191, 255, 0.2); 
+}
+
+.projeto-thumbnail {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    border: 1px solid #3a3a3a;
+}
+
+.card-projeto h3 {
+    margin-top: 0;
+    color: var(--cor-primaria);
+}
+
+.links-projeto {
+    margin-top: 15px;
+    padding-top: 10px;
+    border-top: 1px dashed #444; 
+}
+
+#btn-adicionar-projeto:hover {
+    background-color: #0099CC;
+}
+
+/* 🏆 SEÇÃO CERTIFICADOS - NOVO ESTILO COM IMAGENS */
+.certificados-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    gap: 30px;
+    justify-items: center; 
+}
+
+.certificado-item {
+    background-color: #00000073;
+    overflow: hidden; 
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transform-origin: center center; 
+    transition: transform 0.6s ease-in-out, box-shadow 0.4s ease-in-out; 
+    cursor: pointer;
+    border: solid 1px #0c9ab3;
+    text-align: center;
+}
+
+.certificado-img {
+    width: 110%;
+    max-width: 280px;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    transition: transform 0.4s ease-in-out;
+}
+
+.certificado-nome {
+    margin-top: 10px;
+    font-size: 1.1em;
+    font-weight: 500;
+    color: var(--cor-primaria);
+    text-shadow: 0 0 8px rgba(0, 191, 255, 0.3);
+}
+
+footer {
+    background-color: var(--cor-secundaria);
+    text-align: center;
+    padding: 30px 20px; 
+    margin-top: var(--espacamento);
+    font-size: 0.9em;
+    border-top: 1px solid #333;
+    position: relative;
+    z-index: 10;
+}
+
+.social-links {
+    margin-bottom: 20px;
+}
+
+.social-links a {
+    color: var(--cor-texto); 
+    margin: 0 15px;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--cor-primaria); 
+}
+
+@media (max-width: 768px) {
+    #background-video {
+        display: none;
+    }
+    header::before {
+        content: none;
+    }
+    header {
+        background-color: var(--cor-fundo); 
+    }
+    
+    nav {
+        flex-direction: column;
+    }
+    nav h1 {
+        margin-bottom: 10px;
+        font-size: 1.8em; 
+    }
+    nav ul {
+        padding-top: 10px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    nav ul li {
+        margin: 5px 15px;
+    }
+    .secao-padrao {
+        padding: 40px 0;
+        scroll-margin-top: 80px; 
+    }
+    
+    /* Ajuste para certificados em mobile */
+    .certificados-grid {
+        grid-template-columns: 1fr; /* Uma coluna em mobile */
+        gap: 20px;
+    }
+
+    #sobre .sobre-conteudo {
+        flex-direction: column;
+        gap: 40px;
+        text-align: center;
+    }
+    
+    .perfil-info {
+        flex-basis: auto;
+        align-items: center; 
+        text-align: center;
+    }
+    
+    .foto-perfil {
+        width: 150px;
+        height: 150px;
+        margin: 0 auto 20px auto;
+    }
+
+    .apresentacao-rapida {
+        text-align: center;
+    }
+    
+    .linguagens-badges {
+        justify-content: center;
+        align-self: center;
+        padding: 0 10px; 
+    }
+
+    .sobre-texto {
+        flex-basis: auto;
+    }
+
+    .sobre-texto h2,
+    .sobre-texto h3 {
+        text-align: center;
+        width: 100%;
+    }
+    
+    .sobre-texto h2 {
+        display: block;
+        border-bottom: none;
+        margin-bottom: 10px;
+    }
+    .sobre-texto h2::after {
+        content: none; 
+    }
+
+    .sobre-texto ul {
+        padding: 0 10px;
+    }
+    .sobre-texto ul li {
+        text-align: left; 
+    }
+}
