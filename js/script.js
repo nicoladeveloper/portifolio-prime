@@ -3,7 +3,7 @@ const projetos = [
     {
         nome: "Nome: (Natural Disaster Watch) Python Fastapi, Javascript, Html, Css",
         descricao: "O Natural Disaster Watch é um sistema de monitoramento e prevenção de desastres Naturais em tempo real(com otimização de cache) de eventos naturais ativos ao redor do mundo.Ele utiliza a API EONET(Earth Observatory Natural Event Tracker) da NASA como fonte de dados.",
-        linkDemo: "#",
+        linkDemo: "https://www.linkedin.com/feed/update/urn:li:activity:7392403251909922816/",
         linkRepo: "https://github.com/nicoladeveloper/Natural-Disaster-Watch", // Substitua pelo seu link
         imagemUrl: "img/Natural Disaster Watch.jpg" 
     },
@@ -65,3 +65,4 @@ document.addEventListener('DOMContentLoaded', () => {
         alert("Para adicionar um projeto de verdade, modifique o array 'projetos' no script.js e recarregue a página! (Ou implemente um formulário aqui)");
     });
 });
+
