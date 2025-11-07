@@ -10,7 +10,7 @@ const projetos = [
     {
         nome: "Nome: (Kimetsu Memory) Html, Css, JavaScript",
         descricao: "Kimetsu Memory é um jogo da memória interativo desenvolvido com HTML, CSS e JavaScript puro, inspirado no anime Demon Slayer: Kimetsu no Yaiba. O objetivo é encontrar todos os pares de cartas correspondentes com personagens icônicos da série.",
-        linkDemo: "https://github.com/nicoladeveloper/Kimetsu-Memory/blob/main/README.md", 
+        linkDemo: "https://www.linkedin.com/feed/update/urn:li:activity:7374461185842384897/", 
         linkRepo: "https://github.com/nicoladeveloper/Kimetsu-Memory",
         imagemUrl: "img/Kimetsu Memory.jpg" 
     },
@@ -24,7 +24,7 @@ const projetos = [
        {
         nome: "Nome: (AllGames)",
         descricao: "Interface visual e interativa e funcional sobre diferentes consoles , com foco em design atrativo e funcionalidade. Esse projeto é uma página web de jogos, com Cabeçalho visual e Uma imagem de destaque (logo). Um menu de navegação com links para diferentes páginas funcionais de consoles",
-        linkDemo: "https://seu-ecommerce.netlify.app", 
+        linkDemo: "https://www.linkedin.com/feed/update/urn:li:activity:7359367075640786946/", 
         linkRepo: "https://github.com/nicoladeveloper/AllGames/blob/main/README.md",
         imagemUrl: "img/AllGames.jpg" 
     }
