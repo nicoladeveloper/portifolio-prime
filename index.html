@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfólio de Nicolas Oliveira</title>
-    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <body>
 
     <video id="background-video" autoplay loop muted poster="imagens/video_poster.jpg">
-        <source src="/videoplayback (7).mp4" type="video/mp4">
+        <source src="video/videoplayback (7).mp4" type="video/mp4">
         Seu navegador não suporta a tag de vídeo.
     </video>
     <header>
@@ -30,7 +30,7 @@
             <div class="sobre-conteudo">
                 
                 <div class="perfil-info">
-                    <img src="/NicolasPro.png" alt="Foto de perfil de Nicolas Oliveira" class="foto-perfil">
+                    <img src="img/NicolasPro.png" alt="Foto de perfil de Nicolas Oliveira" class="foto-perfil">
                     
                     <p class="apresentacao-rapida">
                         Nicolas Oliveira, 21 anos. Desenvolvedor Full Stack em formação, cursando o 4º período de Ciências da Computação
@@ -71,27 +71,69 @@
 
         <hr>
 
-    <section id="certificados" class="secao-padrao">
-    <h2>📜 Certificados</h2>
-    <div id="lista-certificados" class="certificados-grid">
-        <div class="certificado-item">
-            <img src="/certificados/certificado1.jpg" alt="Certificado de JavaScript Avançado" class="certificado-img">
-            <p class="certificado-nome">HTML / CSS / JS</p>
-        </div>
-        <div class="certificado-item">
-            <img src="/certificados/certificado2.jpg" alt="Certificado de Arquitetura de Software" class="certificado-img">
-            <p class="certificado-nome">C# .NET / LOGICA / GIT</p>
-        </div>
-        <div class="certificado-item">
-            <img src="/certificados/certificado3.jpg" alt="Certificado de Python para Backend" class="certificado-img">
-            <p class="certificado-nome">JavaScript Ânima</p>
-        </div>
-        <div class="certificado-item">
-            <img src="/certificados/certificado4.jpg" alt="Certificado de Desenvolvimento Full Stack" class="certificado-img">
-            <p class="certificado-nome">Nasa Space Apps Challang</p>
-        </div>
-    </div>
-</section>
+        <section id="certificados" class="secao-padrao">
+            <h2>📜 Certificados</h2>
+            <p class="arraste-mensagem">Arraste para o lado para ver mais ↔️</p>
+            <div class="carousel-container-nav">
+                
+                <button id="btn-anterior-certificado" class="carousel-nav-btn anterior">
+                    <i class="fas fa-arrow-left"></i> Voltar 
+                </button>
+
+                <div class="carousel-wrapper">
+                    <div id="lista-certificados" class="carousel-track">
+                        <div class="certificado-item">
+                            <img src="img/certificados/certificado1.jpg" alt="Certificado de HTML, CSS, JS" class="certificado-img" draggable="false">
+                            <p class="certificado-nome">HTML / CSS / JS</p>
+                        </div>
+                        <div class="certificado-item">
+                            <img src="img/certificados/certificado2.jpg" alt="Certificado de C# .NET / LOGICA / GIT" class="certificado-img" draggable="false">
+                            <p class="certificado-nome">C# .NET / LOGICA / GIT</p>
+                        </div>
+                        <div class="certificado-item">
+                            <img src="img/certificados/certificado3.jpg" alt="Certificado de JavaScript Ânima" class="certificado-img" draggable="false">
+                            <p class="certificado-nome">JavaScript Ânima</p>
+                        </div>
+                        <div class="certificado-item">
+                            <img src="img/certificados/certificado4.jpg" alt="Certificado do NASA Space Apps Challenge" class="certificado-img" draggable="false">
+                            <p class="certificado-nome">Nasa Space Apps Challang</p>
+                        </div>
+                        <div class="certificado-item">
+                            <img src="img/certificados/certificadoGit.jpg" alt="Certificado Git Versionamento" class="certificado-img" draggable="false">
+                            <p class="certificado-nome">GIT Versionamento</p>
+                        </div>
+                         <div class="certificado-item">
+                            <img src="img/certificados/certificadoJs.jpg" alt="Certificado JavaScript" class="certificado-img" draggable="false">
+                            <p class="certificado-nome">Lógica JavaScript</p>
+                        </div>
+                         <div class="certificado-item">
+                            <img src="img/certificados/certificadoObjetos.jpg" alt="Certificado Poo C#" class="certificado-img" draggable="false">
+                            <p class="certificado-nome">POO C#</p>
+                         </div>
+                        <div class="certificado-item">
+                            <img src="img/certificados/certificadoComputaçãoSolucoes.jpg" alt="Certificado Computação Solução" class="certificado-img" draggable="false">
+                            <p class="certificado-nome">Computação Solucionais</p>
+                        </div>
+                        <div class="certificado-item">
+                            <img src="img/certificados/certificadoModelagem.jpg" alt="Certificado Modelagem de software" class="certificado-img" draggable="false">
+                            <p class="certificado-nome">Modelagem de software</p>
+                        </div>
+                        <div class="certificado-item">
+                            <img src="img/certificados/certificadoWeb.jpg" alt="Certificado Desenvolvimento Web" class="certificado-img" draggable="false">
+                            <p class="certificado-nome">Desenvolvimento Web</p>
+                        </div>
+                        <div class="certificado-item">
+                            <img src="img/certificados/certificadoDados.jpg" alt="Certificado Estrutura de Dados" class="certificado-img" draggable="false">
+                            <p class="certificado-nome">Estrutura de Dados</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <button id="btn-proximo-certificado" class="carousel-nav-btn proximo">
+                    Próximo <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </section>
 
     </main>
 
@@ -113,6 +155,6 @@
 </footer>
 
 
-    <script src="/engine.js"></script>
+    <script src="js/script.js"></script>
 </body>
-</html> 
+</html>
