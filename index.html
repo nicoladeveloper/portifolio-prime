@@ -10,18 +10,25 @@
 <body>
 
     <video id="background-video" autoplay loop muted poster="/video/animation/static/uxweb.jpg">
-        <source src="video/Video Project 20.mp4" type="video/mp4">
+        <source src="video/Video Project 21.mp4" type="video/mp4">
         Seu navegador não suporta a tag de vídeo.
     </video>
 
     <header>
         <nav>
             <div class="logo-area">
-                 <img class="logo" src="/img/NicolasPro.png" alt="">
+                <img class="logo" src="/img/NicolasPro.png" alt="">
                 <h1>Nicolas Oliveira</h1> 
             </div>
+
+            <!-- Botão hamburguer (só aparece no mobile via CSS) -->
+            <button class="hamburger" id="hamburger" aria-label="Abrir menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
            
-            <ul>
+            <ul id="nav-menu">
                 <li><a href="#sobre">Sobre Mim</a></li>
                 <li><a href="#projetos">Projetos</a></li>
                 <li><a href="#certificados">Certificados</a></li>
@@ -36,85 +43,75 @@
                 
                 <div class="perfil-info">
                     <div class="topo-perfil">
-                             <div class="siteTitulo animar-texto">    
+                        <div class="siteTitulo animar-texto">    
                             <h1>TÉCNICO  & WEB <mark> DEVELOPER</mark></h1>
-                    </div>
+                        </div>
                     </div>
                 </div>
-                   
-                       
 
-                    <div class="linguagens-badges">
-                        <img src="https://img.shields.io/badge/Node.js-black?style=for-the-badge&logo=node.js&logoColor=white" alt="Badge Node.js">
-                        <img src="https://img.shields.io/badge/ANGULAR-black?style=for-the-badge&logo=angular&logoColor=white" alt="Badge Angular">
-                        <img src="https://img.shields.io/badge/JavaScript-black?style=for-the-badge&logo=javascript&logoColor=black" alt="Badge JavaScript">
-                        <img src="https://img.shields.io/badge/typeScript-black?style=for-the-badge&logo=tepeScript&logoColor=white" alt="typescript">
-                        <img src="https://img.shields.io/badge/figma-black?style=for-the-badge&logo=figma&logoColor=white" alt="figma">
-                        <img src="https://img.shields.io/badge/UX design-black?style=for-the-badge&logo=ux&logoColor=white" alt="Ux design">
-                        <img src="https://img.shields.io/badge/REST API-black?style=for-the-badge&logo=restapi&logoColor=white" alt="python">
-                        <img src="https://img.shields.io/badge/Sql-black?style=for-the-badge&logo=restapi&logoColor=white" alt="python">
+                <div class="linguagens-badges">
+                    <img src="https://img.shields.io/badge/Node.js-black?style=for-the-badge&logo=node.js&logoColor=white" alt="Badge Node.js">
+                    <img src="https://img.shields.io/badge/ANGULAR-black?style=for-the-badge&logo=angular&logoColor=white" alt="Badge Angular">
+                    <img src="https://img.shields.io/badge/JavaScript-black?style=for-the-badge&logo=javascript&logoColor=black" alt="Badge JavaScript">
+                    <img src="https://img.shields.io/badge/typeScript-black?style=for-the-badge&logo=tepeScript&logoColor=white" alt="typescript">
+                    <img src="https://img.shields.io/badge/figma-black?style=for-the-badge&logo=figma&logoColor=white" alt="figma">
+                    <img src="https://img.shields.io/badge/UX design-black?style=for-the-badge&logo=ux&logoColor=white" alt="Ux design">
+                    <img src="https://img.shields.io/badge/REST API-black?style=for-the-badge&logo=restapi&logoColor=white" alt="REST API">
+                    <img src="https://img.shields.io/badge/Sql-black?style=for-the-badge&logo=restapi&logoColor=white" alt="SQL">
+                </div>
 
-                    </div>
+                <div class="servicos"> 
 
-                    <div class="servicos"> 
-
-                        <div class="card-servico">
-                                <video class="bg-video" autoplay muted loop playsinline preload="none" poster="video/animation/static/manutencaoART.jpg">
-                                <source data-src="video/animation/manutencao.mp4" type="video/mp4">
+                    <div class="card-servico">
+                        <video class="bg-video" autoplay muted loop playsinline preload="none" poster="video/animation/static/manutencaoART.jpg">
+                            <source data-src="video/animation/manutencao.mp4" type="video/mp4">
                         </video>
-
                         <div class="titulo-servico">
                             <h3>Manutenção</h3>
                             <p>Manutenção de notebooks e computadores</p>
                         </div>
                     </div>
 
-            <div class="card-servico">
-               <video class="bg-video" autoplay muted loop playsinline preload="none" poster="video/animation/static/siteweb.jpg">
-                        <source data-src="video/animation/website.mp4" type="video/mp4">
-                </video>
-            
-                <div class="titulo-servico">
-                    <h3>Web Sites</h3>
-                    <p>Criação de sites modernos</p>
+                    <div class="card-servico">
+                        <video class="bg-video" autoplay muted loop playsinline preload="none" poster="video/animation/static/siteweb.jpg">
+                            <source data-src="video/animation/website.mp4" type="video/mp4">
+                        </video>
+                        <div class="titulo-servico">
+                            <h3>Web Sites</h3>
+                            <p>Criação de sites modernos</p>
+                        </div>
+                    </div>
+
+                    <div class="card-servico">
+                        <video class="bg-video" autoplay muted loop playsinline preload="none" poster="video/animation/static/Webdev.jpg">
+                            <source data-src="video/animation/animationPro.mp4" type="video/mp4">
+                        </video>
+                        <div class="titulo-servico">
+                            <h3>Desenvolvedor Web</h3>
+                            <p>Desenvolvimento full stack</p>
+                        </div>
+                    </div>
+
+                    <div class="card-servico">
+                        <video class="bg-video" autoplay muted loop playsinline preload="none" poster="video/animation/static/uxweb.jpg">
+                            <source data-src="video/Video Project 20.mp4" type="video/mp4">
+                        </video>
+                        <div class="titulo-servico">
+                            <h3>UX Design</h3>
+                            <p>Experiência do usuário</p>
+                        </div>
+                    </div>
+
                 </div>
+
             </div>
-
-            <div class="card-servico">
-                <video class="bg-video" autoplay muted loop playsinline preload="none" poster="video/animation/static/Webdev.jpg">
-                    <source data-src="video/animation/animationPro.mp4" type="video/mp4">
-                </video>
-
-                <div class="titulo-servico">
-                    <h3>Desenvolvedor Web</h3>
-                    <p>Desenvolvimento full stack</p>
-                </div>
-
-                
-            </div>
-
-            <div class="card-servico">
-                <video class="bg-video" autoplay muted loop playsinline preload="none" poster="video/animation/static/uxweb.jpg">
-                    <source data-src="video/Video Project 20.mp4" type="video/mp4">
-                </video>
-
-                <div class="titulo-servico">
-                    <h3>UX Design</h3>
-                    <p>Experiência do usuário</p>
-                </div>
-                
-            </div>
-
-        </div>
-
         </section>
 
         <hr>
 
         <section id="projetos" class="secao-padrao">
             <h2><mark>Meus Projetos</mark></h2>
-            <div id="lista-projetos" class="cards-container">
-                </div>
+            <div id="lista-projetos" class="cards-container"></div>
         </section>
 
         <hr>
@@ -150,14 +147,14 @@
                             <img src="img/certificados/certificadoGit.jpg" alt="Certificado Git Versionamento" class="certificado-img" draggable="false">
                             <p class="certificado-nome">GIT Versionamento</p>
                         </div>
-                         <div class="certificado-item">
+                        <div class="certificado-item">
                             <img src="img/certificados/certificadoJs.jpg" alt="Certificado JavaScript" class="certificado-img" draggable="false">
                             <p class="certificado-nome">Lógica JavaScript</p>
                         </div>
-                         <div class="certificado-item">
+                        <div class="certificado-item">
                             <img src="img/certificados/certificadoObjetos.jpg" alt="Certificado Poo C#" class="certificado-img" draggable="false">
                             <p class="certificado-nome">POO C#</p>
-                         </div>
+                        </div>
                         <div class="certificado-item">
                             <img src="img/certificados/certificadoComputaçãoSolucoes.jpg" alt="Certificado Computação Solução" class="certificado-img" draggable="false">
                             <p class="certificado-nome">Computação Solucionais</p>
@@ -185,23 +182,22 @@
 
     </main>
 
-<footer id="contato">
-    <div class="social-links">
-        <a href="https://www.linkedin.com/in/nicolas-oliveira-8b12a02b5/" target="_blank" aria-label="LinkedIn">
-            <i class="fab fa-linkedin fa-2x"></i>
-        </a>
-        <a href="https://github.com/nicoladeveloper" target="_blank" aria-label="GitHub">
-            <i class="fab fa-github fa-2x"></i>
-        </a>
-        <a href="mailto:ffnicolaf13@gmail.com" aria-label="Email">
-            <i class="fas fa-envelope fa-2x"></i>
-        </a>
-        <a href="https://www.instagram.com/nicolasdeveper/" target="_blank" aria-label="Instagram">
-            <i class="fab fa-instagram fa-2x"></i>
-        </a>
-    </div>
-</footer>
-
+    <footer id="contato">
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/nicolas-oliveira-8b12a02b5/" target="_blank" aria-label="LinkedIn">
+                <i class="fab fa-linkedin fa-2x"></i>
+            </a>
+            <a href="https://github.com/nicoladeveloper" target="_blank" aria-label="GitHub">
+                <i class="fab fa-github fa-2x"></i>
+            </a>
+            <a href="mailto:ffnicolaf13@gmail.com" aria-label="Email">
+                <i class="fas fa-envelope fa-2x"></i>
+            </a>
+            <a href="https://www.instagram.com/nicolasdeveper/" target="_blank" aria-label="Instagram">
+                <i class="fab fa-instagram fa-2x"></i>
+            </a>
+        </div>
+    </footer>
 
     <script src="js/script.js"></script>
 </body>
