@@ -174,13 +174,40 @@ function iniciarCarrosselArrastavelCertificados() {
 
 document.addEventListener('DOMContentLoaded', () => {
     renderizarProjetos();
-    
+
     const btnAdicionarProjeto = document.getElementById('btn-adicionar-projeto');
     if (btnAdicionarProjeto) {
         btnAdicionarProjeto.addEventListener('click', () => {
-             alert("Para adicionar um projeto de verdade, modifique o array 'projetos' no script.js e recarregue a página! (Ou implemente um formulário aqui)");
+            alert("Para adicionar um projeto de verdade, modifique o array 'projetos' no script.js e recarregue a página!");
         });
     }
-    
+
     iniciarCarrosselArrastavelCertificados();
+
+    // 🎥 Lazy load dos vídeos
+    const videos = document.querySelectorAll(".bg-video");
+
+    videos.forEach(video => {
+        const source = video.querySelector("source");
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    source.src = source.dataset.src;
+                    video.load();
+                    video.play();
+                    observer.unobserve(video);
+                }
+            });
+        });
+
+        observer.observe(video);
+        const textos = document.querySelectorAll(".animar-texto");
+
+        textos.forEach((el, index) => {
+        setTimeout(() => {
+        el.classList.add("ativo");
+    }, index * 300); // delay em sequência
+});
+    });
 });
