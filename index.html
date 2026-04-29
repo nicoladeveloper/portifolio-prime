@@ -3,202 +3,372 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfólio de Nicolas Oliveira</title>
+    <title>Nicolas Oliveira | Desenvolvedor Full Stack</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <body>
-
-    <video id="background-video" autoplay loop muted poster="/video/animation/static/fundo2.png">
-        <source src="video/Video Project 21.mp4" type="video/mp4">
-        Seu navegador não suporta a tag de vídeo.
-    </video>
-
-    <header>
-        <nav>
+ 
+    <!-- Background -->
+    <div class="bg-gradient"></div>
+    <canvas id="particles"></canvas>
+ 
+    <!-- Header -->
+    <header id="header">
+        <nav class="navbar">
             <div class="logo-area">
-                <img class="logo" src="/img/NicolasPro.png" alt="">
-                <h1>Nicolas Oliveira</h1> 
+                <div class="logo-circle"><img class="logo-img" src="/img/NicolasPro.png" alt="N" onerror="this.style.display='none'; this.parentElement.textContent='N';"></div>
+                <h1 class="logo-text">Nicolas Oliveira<span></h1>
             </div>
-
-            <!-- Botão hamburguer (só aparece no mobile via CSS) -->
-            <button class="hamburger" id="hamburger" aria-label="Abrir menu" aria-expanded="false">
+ 
+            <button class="hamburger" id="hamburger" aria-label="Abrir menu">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
-           
-            <ul id="nav-menu">
-                <li><a href="#sobre">Sobre Mim</a></li>
+ 
+            <ul id="nav-menu" class="nav-menu">
+                <li><a href="#sobre">Sobre</a></li>
                 <li><a href="#projetos">Projetos</a></li>
+                <li><a href="#habilidades">Habilidades</a></li>
                 <li><a href="#certificados">Certificados</a></li>
-                <li><a href="#contato">Contato</a></li>     
+                <li><a href="#contato" class="nav-cta">Contratar</a></li>
             </ul>
         </nav>
     </header>
-
+ 
+    <!-- Main -->
     <main>
-        <section id="sobre" class="secao-padrao">
-            <div class="sobre-conteudo">
-                
-                <div class="perfil-info">
-                    <div class="topo-perfil">
-                        <div class="siteTitulo animar-texto">    
-                            <h1>TÉCNICO  & WEB <mark> DEVELOPER</mark></h1>
-                        </div>
+ 
+        <!-- Hero -->
+        <section id="sobre" class="hero">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="hero-badge animate-in">
+                        Disponivel para projetos
+                    </div>
+                    <h2 class="hero-title animate-in">
+                        <span class="line">Olá, eu sou</span>
+                        <span class="line name-line">Nicolas Oliveira</span>
+                    </h2>
+                    <div class="hero-role animate-in">
+                        <span class="role-label">Desenvolvedor</span>
+                        <span class="role-typed" id="typedRole"></span>
+                        <span class="cursor-blink">|</span>
+                    </div>
+                    <p class="hero-subtitle animate-in">Transformo ideias em soluções digitais de alto impacto. Codigo limpo, design moderno e resultados que fazem a difereça para o seu negocio.</p>
+                    <div class="cta-buttons animate-in">
+                        <a href="#contato" class="btn btn-primary">
+                            <i class="fas fa-rocket"></i>
+                            <span>Iniciar Projeto</span>
+                        </a>
+                        <a href="#projetos" class="btn btn-secondary">
+                            <i class="fas fa-eye"></i>
+                            <span>Ver Portfolio</span>
+                        </a>
                     </div>
                 </div>
-
-                <div class="linguagens-badges">
-                    <img src="https://img.shields.io/badge/Node.js-black?style=for-the-badge&logo=node.js&logoColor=white" alt="Badge Node.js">
-                    <img src="https://img.shields.io/badge/ANGULAR-black?style=for-the-badge&logo=angular&logoColor=white" alt="Badge Angular">
-                    <img src="https://img.shields.io/badge/JavaScript-black?style=for-the-badge&logo=javascript&logoColor=black" alt="Badge JavaScript">
-                    <img src="https://img.shields.io/badge/typeScript-black?style=for-the-badge&logo=tepeScript&logoColor=white" alt="typescript">
-                    <img src="https://img.shields.io/badge/figma-black?style=for-the-badge&logo=figma&logoColor=white" alt="figma">
-                    <img src="https://img.shields.io/badge/UX design-black?style=for-the-badge&logo=ux&logoColor=white" alt="Ux design">
-                    <img src="https://img.shields.io/badge/REST API-black?style=for-the-badge&logo=restapi&logoColor=white" alt="REST API">
-                    <img src="https://img.shields.io/badge/Sql-black?style=for-the-badge&logo=restapi&logoColor=white" alt="SQL">
+ 
+                <!-- Showcase 3D de Videos -->
+                <div class="floating-videos-container">
+                    <div id="floating-videos"></div>
                 </div>
-
-                <div class="servicos"> 
-
-                    <div class="card-servico">
-                        <video class="bg-video" autoplay muted loop playsinline preload="none" poster="video/animation/static/manutencaoART.jpg">
-                            <source data-src="video/animation/manutencao.mp4" type="video/mp4">
-                        </video>
-                        <div class="titulo-servico">
-                            <h3>Manutenção</h3>
-                            <p>Manutenção de notebooks e computadores</p>
-                        </div>
-                    </div>
-
-                    <div class="card-servico">
-                        <video class="bg-video" autoplay muted loop playsinline preload="none" poster="video/animation/static/siteweb.jpg">
-                            <source data-src="video/animation/website.mp4" type="video/mp4">
-                        </video>
-                        <div class="titulo-servico">
-                            <h3>Web Sites</h3>
-                            <p>Criação de sites modernos</p>
-                        </div>
-                    </div>
-
-                    <div class="card-servico">
-                        <video class="bg-video" autoplay muted loop playsinline preload="none" poster="video/animation/static/Webdev.jpg">
-                            <source data-src="video/animation/animationPro.mp4" type="video/mp4">
-                        </video>
-                        <div class="titulo-servico">
-                            <h3>Desenvolvedor Web</h3>
-                            <p>Desenvolvimento full stack</p>
-                        </div>
-                    </div>
-
-                    <div class="card-servico">
-                        <video class="bg-video" autoplay muted loop playsinline preload="none" poster="video/animation/static/uxweb.jpg">
-                            <source data-src="video/Video Project 20.mp4" type="video/mp4">
-                        </video>
-                        <div class="titulo-servico">
-                            <h3>UX Design</h3>
-                            <p>Experiência do usuário</p>
-                        </div>
-                    </div>
-
-                </div>
-
             </div>
         </section>
-
-        <hr>
-
-        <section id="projetos" class="secao-padrao">
-            <h2><mark>Meus Projetos</mark></h2>
-            <div id="lista-projetos" class="cards-container"></div>
+ 
+        <!-- Stats -->
+        <section class="stats-section">
+            <div class="stats-grid">
+                <div class="stat-card reveal">
+                    <div class="stat-icon"><i class="fas fa-code"></i></div>
+                    <span class="stat-number" data-count="30">00</span><span class="stat-suffix">+</span>
+                    <span class="stat-label">Projetos Entregues</span>
+                </div>
+                <div class="stat-card reveal">
+                    <div class="stat-icon"><i class="fas fa-layer-group"></i></div>
+                    <span class="stat-number" data-count="15">0</span><span class="stat-suffix">+</span>
+                    <span class="stat-label">Tecnologias</span>
+                </div>
+                <div class="stat-card reveal">
+                    <div class="stat-icon"><i class="fas fa-certificate"></i></div>
+                    <span class="stat-number" data-count="10">0</span><span class="stat-suffix">+</span>
+                    <span class="stat-label">Certificacoes</span>
+                </div>
+                <div class="stat-card reveal">
+                    <div class="stat-icon"><i class="fas fa-trophy"></i></div>
+                    <span class="stat-number" data-count="1">0</span><span class="stat-suffix"></span>
+                    <span class="stat-label">Hackathon NASA</span>
+                </div>
+            </div>
         </section>
-
-        <hr>
-
-        <section id="certificados" class="secao-padrao">
-            <h2>Certificados</h2>
-            <p class="arraste-mensagem">Arraste para o lado para ver mais ↔️</p>
-            <div class="carousel-container-nav">
-                
-                <button id="btn-anterior-certificado" class="carousel-nav-btn anterior">
-                    <i class="fas fa-arrow-left"></i> Voltar 
-                </button>
-
-                <div class="carousel-wrapper">
-                    <div id="lista-certificados" class="carousel-track">
-                        <div class="certificado-item">
-                            <img src="img/certificados/certificado1.jpg" alt="Certificado de HTML, CSS, JS" class="certificado-img" draggable="false">
-                            <p class="certificado-nome">HTML / CSS / JS</p>
+ 
+        <!-- Process / How I Work -->
+        <section class="process-section">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-tag">Processo</span>
+                    <h2 class="section-title">Como Eu <span class="accent">Trabalho</span></h2>
+                    <p class="section-desc">Do conceito ao deploy, cada etapa e feita com atencao aos detalhes</p>
+                </div>
+                <div class="process-grid">
+                    <div class="process-card reveal">
+                        <div class="process-number">01</div>
+                        <div class="process-icon"><i class="fas fa-comments"></i></div>
+                        <h3>Descoberta</h3>
+                        <p>Entendo sua necessidade, objetivo e publico-alvo para criar a solucao ideal</p>
+                    </div>
+                    <div class="process-card reveal">
+                        <div class="process-number">02</div>
+                        <div class="process-icon"><i class="fas fa-pencil-ruler"></i></div>
+                        <h3>Planejamento</h3>
+                        <p>Desenho a arquitetura, prototipo no Figma e defino as tecnologias</p>
+                    </div>
+                    <div class="process-card reveal">
+                        <div class="process-number">03</div>
+                        <div class="process-icon"><i class="fas fa-code"></i></div>
+                        <h3>Desenvolvimento</h3>
+                        <p>Codigo limpo, versionado com Git e seguindo boas praticas de mercado</p>
+                    </div>
+                    <div class="process-card reveal">
+                        <div class="process-number">04</div>
+                        <div class="process-icon"><i class="fas fa-rocket"></i></div>
+                        <h3>Entrega</h3>
+                        <p>Deploy, testes finais e suporte pos-entrega para garantir seu sucesso</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+ 
+        <!-- Skills -->
+        <section id="habilidades" class="skills-section">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-tag">Expertise</span>
+                    <h2 class="section-title">Habilidades & <span class="accent">Tecnologias</span></h2>
+                    <p class="section-desc">Stack moderna para construir solucoes completas e escalaveis</p>
+                </div>
+ 
+                <div class="skills-grid">
+                    <div class="skill-category reveal">
+                        <div class="skill-icon-wrap"><i class="fas fa-palette"></i></div>
+                        <h3>Frontend</h3>
+                        <div class="skill-tags">
+                            <span class="tag"><i class="fab fa-js-square"></i> JavaScript</span>
+                            <span class="tag"><i class="fas fa-code"></i> TypeScript</span>
+                            <span class="tag"><i class="fab fa-angular"></i> Angular</span>
+                            <span class="tag"><i class="fab fa-html5"></i> HTML/CSS</span>
+                            <span class="tag"><i class="fab fa-figma"></i> Figma</span>
                         </div>
-                        <div class="certificado-item">
-                            <img src="img/certificados/certificado2.jpg" alt="Certificado de C# .NET / LOGICA / GIT" class="certificado-img" draggable="false">
-                            <p class="certificado-nome">C# .NET / LOGICA / GIT</p>
+                    </div>
+ 
+                    <div class="skill-category reveal">
+                        <div class="skill-icon-wrap"><i class="fas fa-server"></i></div>
+                        <h3>Backend</h3>
+                        <div class="skill-tags">
+                            <span class="tag"><i class="fab fa-node-js"></i> Node.js</span>
+                            <span class="tag"><i class="fas fa-hashtag"></i> C#</span>
+                            <span class="tag"><i class="fab fa-python"></i> Python</span>
+                            <span class="tag"><i class="fas fa-plug"></i> REST API</span>
+                            <span class="tag"><i class="fas fa-bolt"></i> FastAPI</span>
                         </div>
-                        <div class="certificado-item">
-                            <img src="img/certificados/certificado3.jpg" alt="Certificado de JavaScript Ânima" class="certificado-img" draggable="false">
-                            <p class="certificado-nome">JavaScript Ânima</p>
-                        </div>
-                        <div class="certificado-item">
-                            <img src="img/certificados/certificado4.jpg" alt="Certificado do NASA Space Apps Challenge" class="certificado-img" draggable="false">
-                            <p class="certificado-nome">Nasa Space Apps Challang</p>
-                        </div>
-                        <div class="certificado-item">
-                            <img src="img/certificados/certificadoGit.jpg" alt="Certificado Git Versionamento" class="certificado-img" draggable="false">
-                            <p class="certificado-nome">GIT Versionamento</p>
-                        </div>
-                        <div class="certificado-item">
-                            <img src="img/certificados/certificadoJs.jpg" alt="Certificado JavaScript" class="certificado-img" draggable="false">
-                            <p class="certificado-nome">Lógica JavaScript</p>
-                        </div>
-                        <div class="certificado-item">
-                            <img src="img/certificados/certificadoObjetos.jpg" alt="Certificado Poo C#" class="certificado-img" draggable="false">
-                            <p class="certificado-nome">POO C#</p>
-                        </div>
-                        <div class="certificado-item">
-                            <img src="img/certificados/certificadoComputaçãoSolucoes.jpg" alt="Certificado Computação Solução" class="certificado-img" draggable="false">
-                            <p class="certificado-nome">Computação Solucionais</p>
-                        </div>
-                        <div class="certificado-item">
-                            <img src="img/certificados/certificadoModelagem.jpg" alt="Certificado Modelagem de software" class="certificado-img" draggable="false">
-                            <p class="certificado-nome">Modelagem de software</p>
-                        </div>
-                        <div class="certificado-item">
-                            <img src="img/certificados/certificadoWeb.jpg" alt="Certificado Desenvolvimento Web" class="certificado-img" draggable="false">
-                            <p class="certificado-nome">Desenvolvimento Web</p>
-                        </div>
-                        <div class="certificado-item">
-                            <img src="img/certificados/certificadoDados.jpg" alt="Certificado Estrutura de Dados" class="certificado-img" draggable="false">
-                            <p class="certificado-nome">Estrutura de Dados</p>
+                    </div>
+ 
+                    <div class="skill-category reveal">
+                        <div class="skill-icon-wrap"><i class="fas fa-database"></i></div>
+                        <h3>Database & Tools</h3>
+                        <div class="skill-tags">
+                            <span class="tag"><i class="fas fa-database"></i> SQL</span>
+                            <span class="tag"><i class="fab fa-git-alt"></i> Git</span>
+                            <span class="tag"><i class="fas fa-object-group"></i> UX Design</span>
+                            <span class="tag"><i class="fas fa-terminal"></i> CLI</span>
                         </div>
                     </div>
                 </div>
-                
-                <button id="btn-proximo-certificado" class="carousel-nav-btn proximo">
-                    Próximo <i class="fas fa-arrow-right"></i>
-                </button>
             </div>
         </section>
-
+ 
+        <!-- Projects -->
+        <section id="projetos" class="projects-section">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-tag">Portfolio</span>
+                    <h2 class="section-title">Meus <span class="accent">Projetos</span></h2>
+                    <p class="section-desc">Cada projeto e uma historia de problema resolvido e valor entregue</p>
+                </div>
+                <div id="lista-projetos" class="projects-grid"></div>
+            </div>
+        </section>
+ 
+        <!-- Certificates -->
+        <section id="certificados" class="certificates-section">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-tag">Formacao</span>
+                    <h2 class="section-title">Certificacoes & <span class="accent">Conquistas</span></h2>
+                    <p class="section-desc">Aprendizado continuo e reconhecimento de competencias</p>
+                </div>
+ 
+                <div class="carousel-container reveal">
+                    <button id="btn-anterior-certificado" class="carousel-btn prev" aria-label="Anterior">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+ 
+                    <div class="carousel-wrapper">
+                        <div id="lista-certificados" class="carousel-track">
+                            <div class="cert-item">
+                                <div class="cert-card">
+                                    <img src="img/certificados/certificado1.jpg" alt="HTML / CSS / JS">
+                                    <p>HTML / CSS / JS</p>
+                                </div>
+                            </div>
+                            <div class="cert-item">
+                                <div class="cert-card">
+                                    <img src="img/certificados/certificado2.jpg" alt="C# .NET / LOGICA / GIT">
+                                    <p>C# .NET / LOGICA / GIT</p>
+                                </div>
+                            </div>
+                            <div class="cert-item">
+                                <div class="cert-card">
+                                    <img src="img/certificados/certificado3.jpg" alt="JavaScript Anima">
+                                    <p>JavaScript Anima</p>
+                                </div>
+                            </div>
+                            <div class="cert-item">
+                                <div class="cert-card">
+                                    <img src="img/certificados/certificado4.jpg" alt="NASA Space Apps">
+                                    <p>NASA Space Apps</p>
+                                </div>
+                            </div>
+                            <div class="cert-item">
+                                <div class="cert-card">
+                                    <img src="img/certificados/certificadoGit.jpg" alt="GIT Versionamento">
+                                    <p>GIT Versionamento</p>
+                                </div>
+                            </div>
+                            <div class="cert-item">
+                                <div class="cert-card">
+                                    <img src="img/certificados/certificadoJs.jpg" alt="JavaScript">
+                                    <p>Logica JavaScript</p>
+                                </div>
+                            </div>
+                            <div class="cert-item">
+                                <div class="cert-card">
+                                    <img src="img/certificados/certificadoObjetos.jpg" alt="POO C#">
+                                    <p>POO C#</p>
+                                </div>
+                            </div>
+                            <div class="cert-item">
+                                <div class="cert-card">
+                                    <img src="img/certificados/certificadoComputaçãoSolucoes.jpg" alt="Computacao">
+                                    <p>Computacao Solucionais</p>
+                                </div>
+                            </div>
+                            <div class="cert-item">
+                                <div class="cert-card">
+                                    <img src="img/certificados/certificadoModelagem.jpg" alt="Modelagem">
+                                    <p>Modelagem de Software</p>
+                                </div>
+                            </div>
+                            <div class="cert-item">
+                                <div class="cert-card">
+                                    <img src="img/certificados/certificadoWeb.jpg" alt="Dev Web">
+                                    <p>Desenvolvimento Web</p>
+                                </div>
+                            </div>
+                            <div class="cert-item">
+                                <div class="cert-card">
+                                    <img src="img/certificados/certificadoDados.jpg" alt="Estrutura">
+                                    <p>Estrutura de Dados</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+ 
+                    <button id="btn-proximo-certificado" class="carousel-btn next" aria-label="Proximo">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+ 
+        <!-- CTA Banner -->
+        <section class="cta-section reveal">
+            <div class="container">
+                <div class="cta-card">
+                    <div class="cta-glow"></div>
+                    <div class="cta-content">
+                        <h2>Tem um projeto em mente?</h2>
+                        <p>Vamos transformar sua ideia em realidade. Entre em contato e receba um orcamento personalizado.</p>
+                        <div class="cta-buttons">
+                             <a href="https://wa.me/5571992733599" class="btn btn-primary btn-lg" target="_blank">
+                                <i class="fab fa-whatsapp"></i>
+                                <span>Fale comigo</span>
+                                </a>
+                                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=ffnicolaf13@gmail.com" 
+                                    target="_blank" 
+                                    class="btn btn-primary btn-lg">
+                                        <i class="fas fa-envelope"></i>
+                                        <span>Enviar Email</span>
+                                    </a>
+                            <a href="https://www.linkedin.com/in/nicolas-oliveira-8b12a02b5/" target="_blank" class="btn btn-secondary btn-lg">
+                                <i class="fab fa-linkedin"></i>
+                                <span>LinkedIn</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
-
+ 
+    <!-- Footer / Contato -->
     <footer id="contato">
-        <div class="social-links">
-            <a href="https://www.linkedin.com/in/nicolas-oliveira-8b12a02b5/" target="_blank" aria-label="LinkedIn">
-                <i class="fab fa-linkedin fa-2x"></i>
-            </a>
-            <a href="https://github.com/nicoladeveloper" target="_blank" aria-label="GitHub">
-                <i class="fab fa-github fa-2x"></i>
-            </a>
-            <a href="mailto:ffnicolaf13@gmail.com" aria-label="Email">
-                <i class="fas fa-envelope fa-2x"></i>
-            </a>
-            <a href="https://www.instagram.com/nicolasdeveper/" target="_blank" aria-label="Instagram">
-                <i class="fab fa-instagram fa-2x"></i>
-            </a>
+        <div class="footer-content">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <div class="logo-area">
+                        <div class="logo-circle-sm">N</div>
+                        <span class="logo-text-sm">Nicolas<span class="accent">.</span></span>
+                    </div>
+                    <p>Desenvolvedor Full Stack apaixonado por criar solucoes digitais que geram impacto real.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Navegacao</h4>
+                    <a href="#sobre">Sobre</a>
+                    <a href="#projetos">Projetos</a>
+                    <a href="#habilidades">Habilidades</a>
+                    <a href="#certificados">Certificados</a>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contato</h4>
+                    <a href="mailto:ffnicolaf13@gmail.com"><i class="fas fa-envelope"></i> ffnicolaf13@gmail.com</a>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/nicolas-oliveira-8b12a02b5/" target="_blank" rel="noopener" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://github.com/nicoladeveloper" target="_blank" rel="noopener" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="mailto:ffnicolaf13@gmail.com" aria-label="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        <a href="https://www.instagram.com/nicolasdeveper/" target="_blank" rel="noopener" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Nicolas Oliveira. Desenvolvido com <span class="heart">&#9829;</span></p>
+            </div>
         </div>
     </footer>
-
+ 
+    <!-- Back to top -->
+    <button class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></button>
+ 
     <script src="js/script.js"></script>
 </body>
 </html>
