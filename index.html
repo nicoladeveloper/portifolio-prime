@@ -3,166 +3,161 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nicolas Oliveira | Desenvolvedor Full Stack</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Nicolas Oliveira | Land Pages de Alta Conversão</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
- 
-    <!-- Background -->
-    <div class="bg-gradient"></div>
+
+    <div id="holder"></div>
     <canvas id="particles"></canvas>
- 
+
     <!-- Header -->
     <header id="header">
         <nav class="navbar">
             <div class="logo-area">
-                <div class="logo-circle"><img class="logo-img" src="/img/NicolasPro.png" alt="N" onerror="this.style.display='none'; this.parentElement.textContent='N';"></div>
-                <h1 class="logo-text">Nicolas Oliveira<span></h1>
+                <div class="logo-circle"><img class="logo-img" src="img/NicolasPro.png" alt="N" onerror="this.style.display='none'; this.parentElement.textContent='N';"></div>
+                <h1 class="logo-text">Nicolas Oliveira</h1>
             </div>
- 
             <button class="hamburger" id="hamburger" aria-label="Abrir menu">
-                <span></span>
-                <span></span>
-                <span></span>
+                <span></span><span></span><span></span>
             </button>
- 
             <ul id="nav-menu" class="nav-menu">
-                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#sobre">Início</a></li>
+                <li><a href="#sobre-mim">Sobre</a></li>
                 <li><a href="#projetos">Projetos</a></li>
                 <li><a href="#habilidades">Habilidades</a></li>
                 <li><a href="#certificados">Certificados</a></li>
-                <li><a href="#contato" class="nav-cta">Contratar</a></li>
+                <li><a href="https://wa.me/5571992733599" target="_blank" class="nav-cta">Contratar</a></li>
             </ul>
         </nav>
     </header>
- 
-    <!-- Main -->
+
     <main>
- 
+
         <!-- Hero -->
         <section id="sobre" class="hero">
             <div class="hero-content">
                 <div class="hero-text">
                     <div class="hero-badge animate-in">
-                        Disponivel para projetos
+                        <span class="status-dot"></span> Desenvolvedor Web
                     </div>
                     <h2 class="hero-title animate-in">
-                        <span class="line">Olá, eu sou</span>
-                        <span class="line name-line">Nicolas Oliveira</span>
+                        <span class="line">Um site à altura</span>
+                        <span class="line name-line">do seu negócio.</span>
                     </h2>
-                    <div class="hero-role animate-in">
-                        <span class="role-label">Desenvolvedor</span>
-                        <span class="role-typed" id="typedRole"></span>
-                        <span class="cursor-blink">|</span>
-                    </div>
-                    <p class="hero-subtitle animate-in">Transformo ideias em soluções digitais de alto impacto. Codigo limpo, design moderno e resultados que fazem a difereça para o seu negocio.</p>
+                    <p class="hero-conversion animate-in">
+                        Enquanto você não tem um site de alta conversão,<br>seus concorrentes estão fechando os clientes que seriam seus.
+                    </p>
+                   
                     <div class="cta-buttons animate-in">
-                        <a href="#contato" class="btn btn-primary">
-                            <i class="fas fa-rocket"></i>
-                            <span>Iniciar Projeto</span>
+                        <a href="https://wa.me/5571992733599" target="_blank" class="btn btn-primary">
+                            <i class="fab fa-whatsapp"></i><span>Contratar agora</span>
                         </a>
                         <a href="#projetos" class="btn btn-secondary">
-                            <i class="fas fa-eye"></i>
-                            <span>Ver Portfolio</span>
+                            <i class="fas fa-eye"></i><span>Ver Portfólio</span>
                         </a>
                     </div>
                 </div>
- 
-                <!-- Showcase 3D de Videos -->
-                <div class="floating-videos-container">
-                    <div id="floating-videos"></div>
+            </div>
+        </section>
+
+        <!-- Sobre Mim -->
+        <section id="sobre-mim" class="aboutme-section">
+            <div class="container">
+                <div class="aboutme-grid">
+                    <div class="aboutme-photo-wrap reveal">
+                        <div class="photo-ring"></div>
+                        <div class="photo-frame">
+                            <img src="img/ChatGPT Image 30 de abr. de 2026, 00_20_45.png" alt="Nicolas Oliveira" class="about-photo"
+                                onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'photo-placeholder\'><span>N</span></div>';">
+                            <div class="photo-badge"><i class="fas fa-code"></i> Dev Web</div>
+                        </div>
+                        <div class="photo-glow"></div>
+                        <canvas id="radarChart" width="200" height="200" class="radar-canvas"></canvas>
+                    </div>
+                    <div class="aboutme-content reveal">
+                        <span class="section-tag">Quem faz isso</span>
+                        <h2 class="section-title" style="margin-top:12px">Nicolas <span class="accent">Oliveira</span></h2>
+                        
+                        <p class="about-desc">
+                            Cada detalhe é pensado para <strong>aumentar suas vendas</strong>: copy persuasivo, design que guia o olhar e botões que fazem o visitante agir. Simples assim.
+                        </p>
+                        
+                        <div class="about-tags">
+                            <span class="about-tag"><i class="fas fa-map-marker-alt"></i> Salvador, BA</span>
+                            <span class="about-tag"><i class="fas fa-chart-line"></i> Foco em conversão</span>
+                            <span class="about-tag"><i class="fas fa-rocket"></i> NASA Space Apps</span>
+                            <span class="about-tag"><i class="fas fa-briefcase"></i> Disponível p/ projetos</span>
+                        </div>
+                        <a href="https://wa.me/5571992733599" target="_blank" class="btn btn-primary about-cta">
+                            <i class="fab fa-whatsapp"></i>
+                            <span>Quero meu site de alta conversão</span>
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
- 
-        <!-- Stats -->
-        <section class="stats-section">
-            <div class="stats-grid">
-                <div class="stat-card reveal">
-                    <div class="stat-icon"><i class="fas fa-code"></i></div>
-                    <span class="stat-number" data-count="30">00</span><span class="stat-suffix">+</span>
-                    <span class="stat-label">Projetos Entregues</span>
-                </div>
-                <div class="stat-card reveal">
-                    <div class="stat-icon"><i class="fas fa-layer-group"></i></div>
-                    <span class="stat-number" data-count="15">0</span><span class="stat-suffix">+</span>
-                    <span class="stat-label">Tecnologias</span>
-                </div>
-                <div class="stat-card reveal">
-                    <div class="stat-icon"><i class="fas fa-certificate"></i></div>
-                    <span class="stat-number" data-count="10">0</span><span class="stat-suffix">+</span>
-                    <span class="stat-label">Certificacoes</span>
-                </div>
-                <div class="stat-card reveal">
-                    <div class="stat-icon"><i class="fas fa-trophy"></i></div>
-                    <span class="stat-number" data-count="1">0</span><span class="stat-suffix"></span>
-                    <span class="stat-label">Hackathon NASA</span>
-                </div>
-            </div>
-        </section>
- 
-        <!-- Process / How I Work -->
+
+        <!-- Process -->
         <section class="process-section">
             <div class="container">
                 <div class="section-header reveal">
                     <span class="section-tag">Processo</span>
                     <h2 class="section-title">Como Eu <span class="accent">Trabalho</span></h2>
-                    <p class="section-desc">Do conceito ao deploy, cada etapa e feita com atencao aos detalhes</p>
+                    <p class="section-desc">Do conceito ao deploy, cada etapa feita com atenção aos detalhes</p>
                 </div>
                 <div class="process-grid">
                     <div class="process-card reveal">
-                        <div class="process-number">01</div>
                         <div class="process-icon"><i class="fas fa-comments"></i></div>
+                        
                         <h3>Descoberta</h3>
-                        <p>Entendo sua necessidade, objetivo e publico-alvo para criar a solucao ideal</p>
+                        <p>Entendo seu negócio, objetivo e público-alvo para criar a solução ideal</p>
                     </div>
                     <div class="process-card reveal">
-                        <div class="process-number">02</div>
                         <div class="process-icon"><i class="fas fa-pencil-ruler"></i></div>
                         <h3>Planejamento</h3>
-                        <p>Desenho a arquitetura, prototipo no Figma e defino as tecnologias</p>
+                        <p>Desenho a estrutura, prototipo no Figma e defino as tecnologias</p>
                     </div>
                     <div class="process-card reveal">
-                        <div class="process-number">03</div>
                         <div class="process-icon"><i class="fas fa-code"></i></div>
                         <h3>Desenvolvimento</h3>
-                        <p>Codigo limpo, versionado com Git e seguindo boas praticas de mercado</p>
+                        <p>Código limpo, versionado com Git e seguindo boas práticas de mercado</p>
                     </div>
                     <div class="process-card reveal">
-                        <div class="process-number">04</div>
                         <div class="process-icon"><i class="fas fa-rocket"></i></div>
                         <h3>Entrega</h3>
-                        <p>Deploy, testes finais e suporte pos-entrega para garantir seu sucesso</p>
+                        <p>Deploy, testes finais e suporte pós-entrega para garantir seu sucesso</p>
                     </div>
                 </div>
             </div>
         </section>
- 
+        
+        
         <!-- Skills -->
         <section id="habilidades" class="skills-section">
             <div class="container">
                 <div class="section-header reveal">
                     <span class="section-tag">Expertise</span>
                     <h2 class="section-title">Habilidades & <span class="accent">Tecnologias</span></h2>
-                    <p class="section-desc">Stack moderna para construir solucoes completas e escalaveis</p>
+                    <p class="section-desc">Stack moderna para construir land pages completas e de alta performance</p>
                 </div>
- 
                 <div class="skills-grid">
                     <div class="skill-category reveal">
                         <div class="skill-icon-wrap"><i class="fas fa-palette"></i></div>
                         <h3>Frontend</h3>
                         <div class="skill-tags">
+                            <span class="tag"><i class="fas fa-object-group"></i>Web Design</span>
                             <span class="tag"><i class="fab fa-js-square"></i> JavaScript</span>
-                            <span class="tag"><i class="fas fa-code"></i> TypeScript</span>
                             <span class="tag"><i class="fab fa-angular"></i> Angular</span>
-                            <span class="tag"><i class="fab fa-html5"></i> HTML/CSS</span>
+                            <span class="tag"><i class="fab fa-html5"></i> HTML5</span>
+                            <span class="tag"><i class="fab fa-css3-alt"></i> CSS3</span>
                             <span class="tag"><i class="fab fa-figma"></i> Figma</span>
+                            <span class="tag"><i class="fab fa-figma"></i>Ux Design</span>
                         </div>
                     </div>
- 
                     <div class="skill-category reveal">
                         <div class="skill-icon-wrap"><i class="fas fa-server"></i></div>
                         <h3>Backend</h3>
@@ -171,150 +166,82 @@
                             <span class="tag"><i class="fas fa-hashtag"></i> C#</span>
                             <span class="tag"><i class="fab fa-python"></i> Python</span>
                             <span class="tag"><i class="fas fa-plug"></i> REST API</span>
-                            <span class="tag"><i class="fas fa-bolt"></i> FastAPI</span>
                         </div>
                     </div>
- 
                     <div class="skill-category reveal">
                         <div class="skill-icon-wrap"><i class="fas fa-database"></i></div>
                         <h3>Database & Tools</h3>
                         <div class="skill-tags">
                             <span class="tag"><i class="fas fa-database"></i> SQL</span>
                             <span class="tag"><i class="fab fa-git-alt"></i> Git</span>
-                            <span class="tag"><i class="fas fa-object-group"></i> UX Design</span>
+                            <span class="tag"><i class="fas fa-prisma"></i> Prisma</span>
+                            <span class="tag"><i class="fas fa-operacional"></i> Sistema Operacionais</span>
                             <span class="tag"><i class="fas fa-terminal"></i> CLI</span>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
- 
+
         <!-- Projects -->
         <section id="projetos" class="projects-section">
             <div class="container">
                 <div class="section-header reveal">
-                    <span class="section-tag">Portfolio</span>
+                    <span class="section-tag">Portfólio</span>
                     <h2 class="section-title">Meus <span class="accent">Projetos</span></h2>
-                    <p class="section-desc">Cada projeto e uma historia de problema resolvido e valor entregue</p>
+                    <p class="section-desc">Cada projeto é uma história de problema resolvido e valor entregue</p>
                 </div>
                 <div id="lista-projetos" class="projects-grid"></div>
             </div>
         </section>
- 
+
         <!-- Certificates -->
         <section id="certificados" class="certificates-section">
             <div class="container">
                 <div class="section-header reveal">
-                    <span class="section-tag">Formacao</span>
-                    <h2 class="section-title">Certificacoes & <span class="accent">Conquistas</span></h2>
-                    <p class="section-desc">Aprendizado continuo e reconhecimento de competencias</p>
+                    <span class="section-tag">Formação</span>
+                    <h2 class="section-title">Certificações & <span class="accent">Conquistas</span></h2>
+                    <p class="section-desc">Aprendizado contínuo e reconhecimento de competências</p>
                 </div>
- 
                 <div class="carousel-container reveal">
-                    <button id="btn-anterior-certificado" class="carousel-btn prev" aria-label="Anterior">
-                        <i class="fas fa-chevron-left"></i>
-                    </button>
- 
+                    <button id="btn-anterior-certificado" class="carousel-btn prev" aria-label="Anterior"><i class="fas fa-chevron-left"></i></button>
                     <div class="carousel-wrapper">
                         <div id="lista-certificados" class="carousel-track">
-                            <div class="cert-item">
-                                <div class="cert-card">
-                                    <img src="img/certificados/certificado1.jpg" alt="HTML / CSS / JS">
-                                    <p>HTML / CSS / JS</p>
-                                </div>
-                            </div>
-                            <div class="cert-item">
-                                <div class="cert-card">
-                                    <img src="img/certificados/certificado2.jpg" alt="C# .NET / LOGICA / GIT">
-                                    <p>C# .NET / LOGICA / GIT</p>
-                                </div>
-                            </div>
-                            <div class="cert-item">
-                                <div class="cert-card">
-                                    <img src="img/certificados/certificado3.jpg" alt="JavaScript Anima">
-                                    <p>JavaScript Anima</p>
-                                </div>
-                            </div>
-                            <div class="cert-item">
-                                <div class="cert-card">
-                                    <img src="img/certificados/certificado4.jpg" alt="NASA Space Apps">
-                                    <p>NASA Space Apps</p>
-                                </div>
-                            </div>
-                            <div class="cert-item">
-                                <div class="cert-card">
-                                    <img src="img/certificados/certificadoGit.jpg" alt="GIT Versionamento">
-                                    <p>GIT Versionamento</p>
-                                </div>
-                            </div>
-                            <div class="cert-item">
-                                <div class="cert-card">
-                                    <img src="img/certificados/certificadoJs.jpg" alt="JavaScript">
-                                    <p>Logica JavaScript</p>
-                                </div>
-                            </div>
-                            <div class="cert-item">
-                                <div class="cert-card">
-                                    <img src="img/certificados/certificadoObjetos.jpg" alt="POO C#">
-                                    <p>POO C#</p>
-                                </div>
-                            </div>
-                            <div class="cert-item">
-                                <div class="cert-card">
-                                    <img src="img/certificados/certificadoComputaçãoSolucoes.jpg" alt="Computacao">
-                                    <p>Computacao Solucionais</p>
-                                </div>
-                            </div>
-                            <div class="cert-item">
-                                <div class="cert-card">
-                                    <img src="img/certificados/certificadoModelagem.jpg" alt="Modelagem">
-                                    <p>Modelagem de Software</p>
-                                </div>
-                            </div>
-                            <div class="cert-item">
-                                <div class="cert-card">
-                                    <img src="img/certificados/certificadoWeb.jpg" alt="Dev Web">
-                                    <p>Desenvolvimento Web</p>
-                                </div>
-                            </div>
-                            <div class="cert-item">
-                                <div class="cert-card">
-                                    <img src="img/certificados/certificadoDados.jpg" alt="Estrutura">
-                                    <p>Estrutura de Dados</p>
-                                </div>
-                            </div>
+                            <div class="cert-item"><div class="cert-card"><img src="img/certificados/certificado1.jpg" alt="HTML / CSS / JS"><p>HTML / CSS / JS</p></div></div>
+                            <div class="cert-item"><div class="cert-card"><img src="img/certificados/certificado2.jpg" alt="C# .NET / LOGICA / GIT"><p>C# .NET / LOGICA / GIT</p></div></div>
+                            <div class="cert-item"><div class="cert-card"><img src="img/certificados/certificado3.jpg" alt="JavaScript Anima"><p>JavaScript Anima</p></div></div>
+                            <div class="cert-item"><div class="cert-card"><img src="img/certificados/certificado4.jpg" alt="NASA Space Apps"><p>NASA Space Apps</p></div></div>
+                            <div class="cert-item"><div class="cert-card"><img src="img/certificados/certificadoGit.jpg" alt="GIT Versionamento"><p>GIT Versionamento</p></div></div>
+                            <div class="cert-item"><div class="cert-card"><img src="img/certificados/certificadoJs.jpg" alt="JavaScript"><p>Lógica JavaScript</p></div></div>
+                            <div class="cert-item"><div class="cert-card"><img src="img/certificados/certificadoObjetos.jpg" alt="POO C#"><p>POO C#</p></div></div>
+                            <div class="cert-item"><div class="cert-card"><img src="img/certificados/certificadoComputaçãoSolucoes.jpg" alt="Computacao"><p>Computação Solucionais</p></div></div>
+                            <div class="cert-item"><div class="cert-card"><img src="img/certificados/certificadoModelagem.jpg" alt="Modelagem"><p>Modelagem de Software</p></div></div>
+                            <div class="cert-item"><div class="cert-card"><img src="img/certificados/certificadoWeb.jpg" alt="Dev Web"><p>Desenvolvimento Web</p></div></div>
+                            <div class="cert-item"><div class="cert-card"><img src="img/certificados/certificadoDados.jpg" alt="Estrutura"><p>Estrutura de Dados</p></div></div>
                         </div>
                     </div>
- 
-                    <button id="btn-proximo-certificado" class="carousel-btn next" aria-label="Proximo">
-                        <i class="fas fa-chevron-right"></i>
-                    </button>
+                    <button id="btn-proximo-certificado" class="carousel-btn next" aria-label="Próximo"><i class="fas fa-chevron-right"></i></button>
                 </div>
             </div>
         </section>
- 
-        <!-- CTA Banner -->
+
+        <!-- CTA -->
         <section class="cta-section reveal">
             <div class="container">
                 <div class="cta-card">
                     <div class="cta-glow"></div>
                     <div class="cta-content">
-                        <h2>Tem um projeto em mente?</h2>
-                        <p>Vamos transformar sua ideia em realidade. Entre em contato e receba um orcamento personalizado.</p>
+                        <h2>Pronto para vender mais?</h2>
+                        <p>Entre em contato agora e receba um orçamento personalizado para o seu negócio.</p>
                         <div class="cta-buttons">
-                             <a href="https://wa.me/5571992733599" class="btn btn-primary btn-lg" target="_blank">
-                                <i class="fab fa-whatsapp"></i>
-                                <span>Fale comigo</span>
-                                </a>
-                                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=ffnicolaf13@gmail.com" 
-                                    target="_blank" 
-                                    class="btn btn-primary btn-lg">
-                                        <i class="fas fa-envelope"></i>
-                                        <span>Enviar Email</span>
-                                    </a>
+                            <a href="https://wa.me/5571992733599" class="btn btn-primary btn-lg" target="_blank">
+                                <i class="fab fa-whatsapp"></i><span>Fale comigo no WhatsApp</span>
+                            </a>
+                            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=ffnicolaf13@gmail.com" target="_blank" class="btn btn-primary btn-lg">
+                                <i class="fas fa-envelope"></i><span>Enviar Email</span>
+                            </a>
                             <a href="https://www.linkedin.com/in/nicolas-oliveira-8b12a02b5/" target="_blank" class="btn btn-secondary btn-lg">
-                                <i class="fab fa-linkedin"></i>
-                                <span>LinkedIn</span>
+                                <i class="fab fa-linkedin"></i><span>LinkedIn</span>
                             </a>
                         </div>
                     </div>
@@ -322,8 +249,7 @@
             </div>
         </section>
     </main>
- 
-    <!-- Footer / Contato -->
+
     <footer id="contato">
         <div class="footer-content">
             <div class="footer-top">
@@ -332,11 +258,12 @@
                         <div class="logo-circle-sm">N</div>
                         <span class="logo-text-sm">Nicolas<span class="accent">.</span></span>
                     </div>
-                    <p>Desenvolvedor Full Stack apaixonado por criar solucoes digitais que geram impacto real.</p>
+                    <p>Desenvolvedor web especialista em Web Design, Pages e land pages que geram resultados reais para o seu negócio.</p>
                 </div>
                 <div class="footer-links">
-                    <h4>Navegacao</h4>
-                    <a href="#sobre">Sobre</a>
+                    <h4>Navegação</h4>
+                    <a href="#sobre">Início</a>
+                    <a href="#sobre-mim">Sobre</a>
                     <a href="#projetos">Projetos</a>
                     <a href="#habilidades">Habilidades</a>
                     <a href="#certificados">Certificados</a>
@@ -345,18 +272,11 @@
                     <h4>Contato</h4>
                     <a href="mailto:ffnicolaf13@gmail.com"><i class="fas fa-envelope"></i> ffnicolaf13@gmail.com</a>
                     <div class="social-links">
-                        <a href="https://www.linkedin.com/in/nicolas-oliveira-8b12a02b5/" target="_blank" rel="noopener" aria-label="LinkedIn">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
-                        <a href="https://github.com/nicoladeveloper" target="_blank" rel="noopener" aria-label="GitHub">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a href="mailto:ffnicolaf13@gmail.com" aria-label="Email">
-                            <i class="fas fa-envelope"></i>
-                        </a>
-                        <a href="https://www.instagram.com/nicolasdeveper/" target="_blank" rel="noopener" aria-label="Instagram">
-                            <i class="fab fa-instagram"></i>
-                        </a>
+                        <a href="https://www.linkedin.com/in/nicolas-oliveira-8b12a02b5/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/nicoladeveloper" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="mailto:ffnicolaf13@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                        <a href="https://www.instagram.com/nicolasdeveper/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/5571992733599" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
             </div>
@@ -365,10 +285,11 @@
             </div>
         </div>
     </footer>
- 
-    <!-- Back to top -->
+
     <button class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></button>
- 
-    <script src="js/script.js"></script>
+
+
+    <script src="js/fundo.js"></script>
+    <script src="/js/script.js"></script>    
 </body>
 </html>

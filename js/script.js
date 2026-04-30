@@ -54,39 +54,8 @@ function animateParticles() {
     }
     requestAnimationFrame(animateParticles);
 }
-animateParticles();
+
  
-// ===== TYPED EFFECT =====
-const roles = ['Web', 'FullStack', 'Ux Designer'];
-let roleIndex = 0;
-let charIndex = 0;
-let isDeleting = false;
-const typedEl = document.getElementById('typedRole');
- 
-function typeEffect() {
-    const current = roles[roleIndex];
-    if (isDeleting) {
-        typedEl.textContent = current.substring(0, charIndex - 1);
-        charIndex--;
-    } else {
-        typedEl.textContent = current.substring(0, charIndex + 1);
-        charIndex++;
-    }
- 
-    let speed = isDeleting ? 50 : 100;
- 
-    if (!isDeleting && charIndex === current.length) {
-        speed = 2000;
-        isDeleting = true;
-    } else if (isDeleting && charIndex === 0) {
-        isDeleting = false;
-        roleIndex = (roleIndex + 1) % roles.length;
-        speed = 300;
-    }
- 
-    setTimeout(typeEffect, speed);
-}
-typeEffect();
  
 // ===== HEADER SCROLL =====
 const header = document.getElementById('header');
@@ -98,7 +67,7 @@ window.addEventListener('scroll', () => {
     backToTop.classList.toggle('show', scrollY > 500);
 });
  
-backToTop.addEventListener('click', () => {
+if (backToTop) backToTop.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 });
  
@@ -139,145 +108,7 @@ const counterObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.5 });
  
 statNums.forEach(el => counterObserver.observe(el));
- 
-// ==================== DADOS DOS VIDEOS DO SHOWCASE ====================
-const videosShowcase = [
-    { src: "video/video5.mp4",  poster: "img/Natural Disaster Watch.jpg", orientation: "landscape" },
-    { src: "video/video5.mp4",   poster: "img/Kimetsu Memory.jpg",         orientation: "landscape" },
-    { src: "video/video1.mp4",  poster: "img/AllGames.jpg",               orientation: "landscape" },
-    { src: "video/video5.mp4",  poster: "img/DataShow.jpg",               orientation: "landscape" },
-    { src: "video/video4.mp4",       poster: "img/poster/celular1.jpg",           orientation: "portrait"  },
-    { src: "video/video3.mp4",   poster: "img/Sistema de Hospedagem.jpg",  orientation: "portrait"  },
 
-];
- 
-const SLOT_DEFS = [
-    { cls: "vid-slot-main",       orientation: "landscape", badge: true  },
-    { cls: "vid-slot-portrait-r", orientation: "portrait",  badge: false },
-    { cls: "vid-slot-portrait-l", orientation: "portrait",  badge: false },
-];
- 
-// ==================== SHOWCASE MANAGER ====================
-class ShowcaseManager {
-    constructor() {
-        this.container = document.getElementById('floating-videos');
-        if (!this.container) return;
-        this.landscape = videosShowcase.filter(v => v.orientation === 'landscape');
-        this.portrait = videosShowcase.filter(v => v.orientation === 'portrait');
-        this.currentSet = 0;
-        this.slots = [];
-        this.dots = [];
-        this.cycleTimer = null;
-        this.build();
-        this.startCycle();
-        this.setupVisibility();
-    }
- 
-    build() {
-        const stage = document.createElement('div');
-        stage.className = 'showcase-stage';
-        const glow = document.createElement('div');
-        glow.className = 'showcase-glow';
-        stage.appendChild(glow);
- 
-        SLOT_DEFS.forEach(def => {
-            const slot = document.createElement('div');
-            slot.className = `vid-slot ${def.cls}`;
-            if (def.badge) {
-                const badge = document.createElement('span');
-                badge.className = 'vid-badge';
-                badge.textContent = '\u25CF ao vivo';
-                slot.appendChild(badge);
-            }
-            const video = document.createElement('video');
-            video.muted = true;
-            video.loop = true;
-            video.playsInline = true;
-            video.preload = 'none';
-            video.style.cssText = 'width:100%;height:100%;object-fit:cover;display:block;';
-            slot.appendChild(video);
-            stage.appendChild(slot);
-            this.slots.push({ el: slot, video, orientation: def.orientation });
-        });
- 
-        const counter = document.createElement('div');
-        counter.className = 'showcase-counter';
-        const totalSets = Math.max(this.landscape.length, this.portrait.length || 1);
-        const dotCount = Math.min(totalSets, 8);
-        for (let i = 0; i < dotCount; i++) {
-            const dot = document.createElement('div');
-            dot.className = 'showcase-dot' + (i === 0 ? ' active' : '');
-            dot.addEventListener('click', () => this.goTo(i));
-            counter.appendChild(dot);
-            this.dots.push(dot);
-        }
- 
-        this.container.innerHTML = '';
-        this.container.appendChild(stage);
-        this.container.appendChild(counter);
-        this.loadSet(0);
-    }
- 
-    loadSet(setIdx) {
-        this.dots.forEach((d, i) => d.classList.toggle('active', i === setIdx));
-        let lCount = 0, pCount = 0;
-        this.slots.forEach(({ el, video, orientation }) => {
-            let pool, vidIdx;
-            if (orientation === 'landscape') {
-                pool = this.landscape;
-                vidIdx = (setIdx + lCount) % pool.length;
-                lCount++;
-            } else {
-                pool = this.portrait.length > 0 ? this.portrait : this.landscape;
-                vidIdx = (setIdx + pCount) % pool.length;
-                pCount++;
-            }
-            const vidData = pool[vidIdx];
-            if (!vidData) return;
-            el.style.opacity = '0';
-            setTimeout(() => {
-                if (video.src !== new URL(vidData.src, window.location.href).href) {
-                    video.poster = vidData.poster || '';
-                    video.src = vidData.src;
-                    video.load();
-                    const play = () => video.play().catch(() => {});
-                    if ('requestIdleCallback' in window) requestIdleCallback(play, { timeout: 800 });
-                    else setTimeout(play, 100);
-                }
-                el.style.opacity = '1';
-            }, 350);
-        });
-    }
- 
-    goTo(idx) {
-        this.currentSet = idx;
-        this.loadSet(idx);
-        clearInterval(this.cycleTimer);
-        this.startCycle();
-    }
- 
-    startCycle() {
-        this.cycleTimer = setInterval(() => {
-            const total = this.dots.length || 1;
-            this.currentSet = (this.currentSet + 1) % total;
-            this.loadSet(this.currentSet);
-        }, 7000);
-    }
- 
-    setupVisibility() {
-        if (!('IntersectionObserver' in window)) return;
-        const obs = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                this.slots.forEach(({ video }) => {
-                    entry.isIntersecting ? video.play().catch(() => {}) : video.pause();
-                });
-            });
-        }, { threshold: 0.1 });
-        obs.observe(this.container);
-    }
-}
- 
-// ==================== DADOS DOS PROJETOS ====================
 const projetos = [
      {
         nome: "MaxTenis",
@@ -376,57 +207,7 @@ function renderizarProjetos() {
     document.querySelectorAll('.card-projeto.reveal').forEach(el => revealObserver.observe(el));
 }
  
-// ==================== LAZY LOAD VIDEOS ====================
-class VideoLazyLoader {
-    constructor() {
-        this.videos = document.querySelectorAll('.projeto-video');
-        this.loaded = new Set();
-        this.init();
-    }
-    init() {
-        if ('IntersectionObserver' in window) {
-            const obs = new IntersectionObserver(entries => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        this.load(entry.target);
-                        obs.unobserve(entry.target);
-                    }
-                });
-            }, { rootMargin: '50px', threshold: 0.01 });
-            this.videos.forEach(v => obs.observe(v));
-        } else {
-            this.videos.forEach(v => this.load(v));
-        }
-    }
-    load(video) {
-        if (this.loaded.has(video)) return;
-        const src = video.dataset.src;
-        if (!src) return;
-        const attach = () => {
-            if (this.loaded.has(video)) return;
-            const source = document.createElement('source');
-            source.src = src;
-            source.type = 'video/mp4';
-            video.appendChild(source);
-            this.loaded.add(video);
-        };
-        'requestIdleCallback' in window
-            ? requestIdleCallback(attach, { timeout: 2000 })
-            : setTimeout(attach, 0);
-    }
-}
- 
-// ==================== PLAY ON HOVER ====================
-class VideoHoverPlay {
-    constructor() {
-        document.querySelectorAll('.projeto-video').forEach(video => {
-            const card = video.closest('.card-projeto');
-            if (!card) return;
-            card.addEventListener('mouseenter', () => { if (video.readyState >= 2) video.play().catch(() => {}); });
-            card.addEventListener('mouseleave', () => video.pause());
-        });
-    }
-}
+
  
 // ==================== CAROUSEL ====================
 class CertificateCarousel {
@@ -493,12 +274,83 @@ document.addEventListener('DOMContentLoaded', () => {
     renderizarProjetos();
     setupMenuHamburguer();
     setupSmoothScroll();
-    new ShowcaseManager();
     new CertificateCarousel();
-    setTimeout(() => {
-        new VideoLazyLoader();
-        new VideoHoverPlay();
-    }, 100);
+    animateParticles();
 });
  
 window.addEventListener('scroll', () => {}, { passive: true });
+// ==================== RADAR CHART ====================
+function drawRadarChart() {
+    const canvas = document.getElementById('radarChart');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    const cx = canvas.width / 2, cy = canvas.height / 2, radius = 73;
+    const skills = [
+        { label: 'Frontend', value: 0.92 },
+        { label: 'Angular', value: 0.85 },
+        { label: 'UI/UX', value: 0.83 },
+        { label: 'JS/CSS', value: 0.90 },
+        { label: 'LandPage', value: 0.95 },
+        { label: 'Design', value: 0.80 },
+    ];
+    const total = skills.length;
+    const angleStep = (Math.PI * 2) / total;
+    function getPoint(i, r) {
+        const angle = -Math.PI / 2 + i * angleStep;
+        return { x: cx + Math.cos(angle) * r, y: cy + Math.sin(angle) * r };
+    }
+    let progress = 0;
+    function animate() {
+        progress = Math.min(progress + 0.04, 1);
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        [0.25,0.5,0.75,1].forEach(frac => {
+            ctx.beginPath();
+            for (let i = 0; i < total; i++) {
+                const p = getPoint(i, radius * frac);
+                i === 0 ? ctx.moveTo(p.x,p.y) : ctx.lineTo(p.x,p.y);
+            }
+            ctx.closePath();
+            ctx.strokeStyle='rgba(79,70,229,0.18)'; ctx.lineWidth=1; ctx.stroke();
+        });
+        for (let i=0; i<total; i++) {
+            const p = getPoint(i,radius);
+            ctx.beginPath(); ctx.moveTo(cx,cy); ctx.lineTo(p.x,p.y);
+            ctx.strokeStyle='rgba(79,70,229,0.15)'; ctx.lineWidth=1; ctx.stroke();
+        }
+        ctx.beginPath();
+        for (let i=0; i<total; i++) {
+            const p = getPoint(i, radius * skills[i].value * progress);
+            i===0 ? ctx.moveTo(p.x,p.y) : ctx.lineTo(p.x,p.y);
+        }
+        ctx.closePath();
+        const grad = ctx.createRadialGradient(cx,cy,0,cx,cy,radius);
+        grad.addColorStop(0,'rgba(99,102,241,0.5)'); grad.addColorStop(1,'rgba(79,70,229,0.15)');
+        ctx.fillStyle=grad; ctx.fill();
+        ctx.strokeStyle='#6366f1'; ctx.lineWidth=2; ctx.stroke();
+        for (let i=0; i<total; i++) {
+            const p = getPoint(i, radius * skills[i].value * progress);
+            ctx.beginPath(); ctx.arc(p.x,p.y,4,0,Math.PI*2);
+            ctx.fillStyle='#818cf8'; ctx.fill();
+            ctx.strokeStyle='#fff'; ctx.lineWidth=1.5; ctx.stroke();
+        }
+        ctx.font='600 9px Inter,sans-serif';
+        ctx.fillStyle='rgba(148,163,184,0.9)';  
+        ctx.textAlign='center'; ctx.textBaseline='middle';
+        for (let i=0; i<total; i++) {
+            const lp = getPoint(i, radius+18);
+            ctx.fillText(skills[i].label, lp.x, lp.y);
+        }
+        if (progress < 1) requestAnimationFrame(animate);
+    }
+    animate();
+}
+
+const aboutSection = document.getElementById('sobre-mim');
+if (aboutSection) {
+    const aboutObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) { drawRadarChart(); aboutObserver.disconnect(); }
+        });
+    }, { threshold: 0.3 });
+    aboutObserver.observe(aboutSection);
+}
